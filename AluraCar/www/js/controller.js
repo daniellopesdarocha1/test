@@ -1,6 +1,12 @@
 angular.module('starter')
-.controller('ListagemController', function($scope){
+.controller('ListagemController', function($scope, CarroService){
 
+	CarroService.obterCarros().then(function(dados){
+
+		$scope.listaDeCarros = dados;
+
+	});
+/*
 	$scope.listaDeCarros = [{"nome" : 'BMW i20', "preco" : 70000},
 							{"nome" : 'Vectra', "preco" : 30000},
 							{"nome" : 'Porche', "preco" : 80000},
@@ -10,7 +16,7 @@ angular.module('starter')
 							{"nome" : 'Gol', "preco" : 20000},
 							{"nome" : 'Fusca', "preco" : 2000},
 							{"nome" : 'C3', "preco" : 35000}];
-
+*/
 	$scope.rodape = "Rua Vergueiro, 3185";
 	
 });
